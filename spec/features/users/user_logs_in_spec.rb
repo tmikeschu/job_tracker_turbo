@@ -5,7 +5,7 @@ RSpec.feature "User login" do
     scenario "can log in" do
       user = create(:user, email: "test@test.test", password: "secret")
       visit root_path
-      click_on "Log in"
+      click_on "Login"
 
       expect(current_path).to eq login_path
 

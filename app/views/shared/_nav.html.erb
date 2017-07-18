@@ -1,0 +1,11 @@
+<nav>
+  <header>
+    <h1>Job Tracker</h1>
+  </header>
+  <ul>
+    <li>
+      <%= render partial: "shared/#{current_user ? "logout" : "login"}" %>
+    </li>
+  </ul>
+</nav>
+

@@ -4,7 +4,7 @@ RSpec.feature "User registration" do
   describe "A visitor" do
     scenario "can create an account" do
       visit root_path
-      expect(page).to have_link "Log in", href: login_path
+      expect(page).to have_link "Login", href: login_path
       click_on "Create an account"
 
       expect(current_path).to eq new_user_path
@@ -18,7 +18,7 @@ RSpec.feature "User registration" do
       expect(current_path).to eq dashboard_path
       expect(page).to have_content "Hello, tester!"
       expect(page).to_not have_link "Create an account", href: new_user_path
-      expect(page).to_not have_link "Log in", href: login_path
+      expect(page).to_not have_link "Login", href: login_path
     end
   end
 
