@@ -4,8 +4,10 @@ RSpec.feature "User registration" do
   describe "A visitor" do
     scenario "can create an account" do
       visit root_path
-      expect(page).to have_link "Login", href: login_path
-      click_on "Create an account"
+      expect(page).to have_content "Welcome to Job Tracker"
+
+      click_on "Login"
+      click_on "Don't have an account?"
 
       expect(current_path).to eq new_user_path
 

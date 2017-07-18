@@ -1,17 +1,17 @@
-<%= render partial: "shared/error" %>
+<section class="new-user">
+  <%= render partial: "shared/error" %>
+  <%= form_for @user do |f| %>
+    <%= f.text_field :username, required: true, placeholder: "Username" %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username, required: true %>
+    <%= f.email_field :email, required: true, placeholder: "Email" %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, required: true%>
+    <%= f.password_field :password, required: true, placeholder: "Password" %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, required: true %>
+    <%= f.password_field :password_confirmation, required: true, placeholder: "Password confirmation" %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, required: true %>
+    <%= f.submit "Submit" %>
+  <% end %>
 
-  <%= f.submit "Submit" %>
-<% end %>
+  <%= link_to "Already have an account?", login_path %>
+</section>
+

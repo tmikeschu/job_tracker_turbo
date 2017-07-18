@@ -31,3 +31,16 @@ a {
   }
 }
 
+input {
+  &[type="submit"] {
+    border: none;
+    background-color: $blue;
+    color: $light;
+    transition: 300ms;
+    &:hover {
+      transition: 300ms;
+      background-color: $pink;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@mixin flex-row-sp-between ($dir, $w, $jc, $ai) {
+@mixin flex ($dir, $w, $jc, $ai: inherit) {
   display: flex;
   flex-direction: $dir;
   width: $w;
@@ -6,3 +6,10 @@
   align-items: $ai;
 }
 
+@mixin flash($bc, $c) {
+  display: inline-block;
+  padding: 5px;
+  background-color: $bc;
+  color: $c;
+  margin: 5px 0;
+}

@@ -1,2 +1,4 @@
-<p><%= flash[:success] %></p>
+<% if flash[:success] %>
+  <p class="success"><%= flash[:success] %></p>
+<% end %>
 

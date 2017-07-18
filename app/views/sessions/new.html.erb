@@ -1,11 +1,13 @@
-<%= render partial: "shared/error" %>
-<%= form_tag login_path do %>
-  <%= label_tag :email %>
-  <%= email_field_tag :email, nil, required: true %>
+<section class="login">
+  <%= render partial: "shared/error" %>
+  <%= form_tag login_path do %>
+    <%= email_field_tag :email, nil, required: true, placeholder: "Email" %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password, nil, required: true %>
+    <%= password_field_tag :password, nil, required: true, placeholder: "Password" %>
 
-  <%= submit_tag "Log in" %>
-<% end %>
+    <%= submit_tag "Log in" %>
+  <% end %>
+
+  <%= link_to "Don't have an account?", new_user_path %>
+</section>
 

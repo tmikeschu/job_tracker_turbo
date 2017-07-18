@@ -1,0 +1,8 @@
+.success {
+  @include flash(darkgreen, lightgreen)
+}
+
+.error {
+  @include flash(darkred, pink)
+}
+

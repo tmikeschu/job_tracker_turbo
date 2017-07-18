@@ -1,0 +1,19 @@
+.home {
+  @include flex(row, 99%, flex-start, center);
+  margin: 20px 5px;
+  background: $pink;
+  color: $light;
+  padding: 20px 0;
+  padding-left: 10px;
+  p {
+    margin-left: 10px;
+  }
+
+  @media (max-width: 667px) {
+    @include flex(column, 95%, flex-start, flex-start);
+    p {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+}

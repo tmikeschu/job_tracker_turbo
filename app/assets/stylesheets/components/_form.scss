@@ -1,0 +1,28 @@
+.form {
+  @include flex(column, 100%, center, center);
+  form {
+    @include flex(column, 250px, space-between, flex-start);
+    margin: 5px 0;
+    input {
+      font-size: 20px;
+      font-family: $font;
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (max-width: 667px) {
+    @include flex(column, 100%, center);
+    height: 500px;
+    form {
+      @include flex(column, 100%, center, flex-start);
+      input {
+        border: 1px solid $dark;
+        width: 99%;
+        &[type="submit"] {
+          border: none;
+        }
+      }
+    }
+  }
+}
+

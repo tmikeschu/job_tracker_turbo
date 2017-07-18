@@ -1,2 +1,4 @@
-<p><%= flash[:error] %></p>
+<% if flash[:error] %>
+  <p class="error"><%= flash[:error] %></p>
+<% end %>
 

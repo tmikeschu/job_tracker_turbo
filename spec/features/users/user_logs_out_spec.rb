@@ -15,7 +15,7 @@ RSpec.feature "User logout" do
 
       expect(current_path).to eq root_path
       expect(page).to have_link "Login", href: login_path
-      expect(page).to have_link "Create an account", href: new_user_path
+      expect(page).to have_content "Welcome to Job Tracker"
     end
   end
 end
