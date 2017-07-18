@@ -1,0 +1,8 @@
+@mixin flex-row-sp-between ($dir, $w, $jc, $ai) {
+  display: flex;
+  flex-direction: $dir;
+  width: $w;
+  justify-content: $jc;
+  align-items: $ai;
+}
+

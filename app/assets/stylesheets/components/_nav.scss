@@ -1,0 +1,10 @@
+nav {
+ @include flex-row-sp-between(row, 100%, space-between, center);
+ header {
+   margin-left: 5px;
+ }
+
+ ul {
+   margin-right: 5px;
+ }
+}
