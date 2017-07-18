@@ -1,0 +1,33 @@
+body {
+  font-family: $font;
+  margin: 5px;
+  color: $dark;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+a {
+  text-decoration: none;
+  color: $dark;
+  transition: 300ms;
+  &:hover, &:focus {
+    color: $pink;
+    transition: 300ms;
+    letter-spacing: .5px;
+  }
+}
+
