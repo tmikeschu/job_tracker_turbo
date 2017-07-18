@@ -97,9 +97,9 @@ RSpec.feature "User registration" do
         click_on "Submit"
 
         email_error = page.find("#user_email").native.attribute("validationMessage")
-        expect(email_error).to eq "Please enter an email address."
+        expect(email_error).to eq "Please include an '@' in the email address. 'test.com' is missing an '@'."
       end
     end
-
   end
 end
+
