@@ -43,7 +43,7 @@ RSpec.feature "User registration" do
 
     context "When an email already exists" do
       scenario "another user cannot use the same email" do
-        create(:user, email: "test@test.test") 
+        create(:user, email: "test@test.test")
 
         fill_in "Username", with: "tester"
         fill_in "Email", with: "test@test.test"
@@ -87,5 +87,19 @@ RSpec.feature "User registration" do
         expect(page).to have_content "Password confirmation doesn't match"
       end
     end
+
+    context "When the email is not in proper format" do
+      scenario "the user sees an error", js: true do
+        fill_in "Username", with: "tester"
+        fill_in "Email", with: "test.com"
+        fill_in "Password", with: "secret"
+        fill_in "Password confirmation", with: "secret"
+        click_on "Submit"
+
+        email_error = page.find("#user_email").native.attribute("validationMessage")
+        expect(email_error).to eq "Please enter an email address."
+      end
+    end
+
   end
 end
