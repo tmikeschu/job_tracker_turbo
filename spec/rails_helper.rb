@@ -32,4 +32,5 @@ RSpec.configure do |config|
     "rack",
     "railties"
   )
+  config.include SessionHelpers, type: :feature
 end

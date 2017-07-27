@@ -14,7 +14,7 @@ RSpec.feature "User registration" do
       fill_in "Username", with: "tester"
       fill_in "Email", with: "test@test.test"
       fill_in "Password", with: "supersecret"
-      fill_in "Password confirmation", with: "supersecret"
+      fill_in "Confirm password", with: "supersecret"
       click_on "Submit"
 
       expect(current_path).to eq dashboard_path
@@ -36,7 +36,7 @@ RSpec.feature "User registration" do
         fill_in "Username", with: "tester"
         fill_in "Email", with: "test@test.test"
         fill_in "Password", with: "supersecret"
-        fill_in "Password confirmation", with: "supersecret"
+        fill_in "Confirm password", with: "supersecret"
         click_on "Submit"
 
         expect(page).to have_content "Username has already been taken"
@@ -50,7 +50,7 @@ RSpec.feature "User registration" do
         fill_in "Username", with: "tester"
         fill_in "Email", with: "test@test.test"
         fill_in "Password", with: "supersecret"
-        fill_in "Password confirmation", with: "supersecret"
+        fill_in "Confirm password", with: "supersecret"
         click_on "Submit"
 
         expect(page).to have_content "Email has already been taken"
@@ -69,10 +69,11 @@ RSpec.feature "User registration" do
         }
 
         fields.each do |field, value|
-          id = "#user_#{field}"
+          id    = "#user_#{field}"
           error = page.find(id).native.attribute("validationMessage")
           expect(error).to eq "Please fill out this field."
-          fill_in field.to_s.capitalize.tr("_", " "), with: value
+          field = "Confirm password" if field == :password_confirmation
+          fill_in field.to_s.capitalize, with: value
           click_on "Submit"
         end
       end
@@ -83,7 +84,7 @@ RSpec.feature "User registration" do
         fill_in "Username", with: "tester"
         fill_in "Email", with: "test@test.test"
         fill_in "Password", with: "supersecret"
-        fill_in "Password confirmation", with: "super"
+        fill_in "Confirm password", with: "super"
         click_on "Submit"
 
         expect(page).to have_content "Password confirmation doesn't match"
@@ -95,7 +96,7 @@ RSpec.feature "User registration" do
         fill_in "Username", with: "tester"
         fill_in "Email", with: "test.com"
         fill_in "Password", with: "secret"
-        fill_in "Password confirmation", with: "secret"
+        fill_in "Confirm password", with: "secret"
         click_on "Submit"
 
         email_error = page.find("#user_email").native.attribute("validationMessage")
